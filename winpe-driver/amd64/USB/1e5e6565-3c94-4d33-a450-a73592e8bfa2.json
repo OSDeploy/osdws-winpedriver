@@ -1,0 +1,32 @@
+{
+  "Title": "Realtek - Net - 1153.13.20.420",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "Realtek Net  driver update released in  August 2024",
+  "LastModified": "2024-08-01",
+  "Size": "339 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Servicing Drivers",
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Upgrade & Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": false,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "1e5e6565-3c94-4d33-a450-a73592e8bfa2",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2024/10/42f945d1-b4b3-4e2b-a65d-9c693be42548_cc562bcd964a5a9528dc54cdf2bee49c295f2c37.cab",
+  "InputObject": "1e5e6565-3c94-4d33-a450-a73592e8bfa2"
+}

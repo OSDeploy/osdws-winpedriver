@@ -1,0 +1,32 @@
+{
+  "Title": "Red Hat, Inc. - Net - 100.94.104.24200",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "Red Hat, Inc. Net  driver update released in  October 2023",
+  "LastModified": "2023-10-09",
+  "Size": "537 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Servicing Drivers",
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Upgrade & Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": false,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "4f51dc80-3d59-491b-9c69-4794c86a7e5e",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2024/04/c83a1d98-5090-4779-9c53-812130d1fc3f_ad0ccd70aaa040340cf10216b5c3436bc778d266.cab",
+  "InputObject": "4f51dc80-3d59-491b-9c69-4794c86a7e5e"
+}

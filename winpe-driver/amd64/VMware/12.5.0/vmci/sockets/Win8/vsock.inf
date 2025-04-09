@@ -1,0 +1,161 @@
+
+;-------------------------------------------------------------------------
+; vsock.inf
+;
+; Copyright (c) 1993-1999, Microsoft Corporation
+; Copyright (c) 1999-2024 Broadcom. All Rights Reserved.
+; The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+;-------------------------------------------------------------------------
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[version]
+Signature   = "$Windows NT$"
+Class       = System
+ClassGUID   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %CompanyProvider%
+DriverVer   = 05/15/2024, "9.8.22.0"
+CatalogFile = vsock.cat
+DriverPackageDisplayName = %loc.VSockServiceDisplayName%
+DriverPackageType = KernelService
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;
+;; Default install sections
+;; ========================
+[DefaultInstall]
+OptionDesc          = %loc.VSockServiceDesc%
+CopyFiles           = VSock.DriverFiles.x64,VSock.DllFiles.x64,VSock.DllFiles_WOW64.x64
+
+[DefaultInstall.Services]
+AddService          = %VSockServiceName%,0x800,VSock.Service    ; SPSVCINST_STARTSERVICE
+
+;;
+;; Default uninstall sections
+;; ==========================
+[DefaultUninstall]
+DelFiles   = VSock.DriverFiles.x64,VSock.DllFiles.x64,VSock.DllFiles_WOW64.x64
+DelReg     = VSock.DelRegistry
+
+[DefaultUninstall.Services]
+DelService = %VSockServiceName%,0x204	; SPSVCINST_DELETEEVENTLOGENTRY | SPSVCINST_STOPSERVICE
+
+;;
+;; Services Section
+;; ================
+;;
+;; Note, we set SERVICE_SYSTEM_START but the installer will promote us to SERVICE_BOOT_START
+;; This is to work around DiFX install package requesting reboots for all boot start services.
+[VSock.Service]
+DisplayName      = %loc.VSockServiceDisplayName%
+Description      = %loc.VSockServiceDesc%
+ServiceBinary    = %12%\vsock.sys               ;%windir%\system32\drivers\vsock.sys
+ServiceType      = 1                            ;SERVICE_KERNEL_DRIVER
+StartType        = 1                            ;SERVICE_SYSTEM_START see note above
+ErrorControl     = 0                            ;SERVICE_ERROR_IGNORE
+LoadOrderGroup   = System Bus Extender
+AddReg           = VSock.AddRegistry
+
+;;
+;; Registry Modifications
+;; ======================
+
+[VSock.AddRegistry]
+
+[VSock.DelRegistry]
+
+;;
+;; Sources
+;; =======
+[SourceDisksNames]
+1 = %loc.Disk1%,,,
+
+[SourceDisksFiles]
+vsock.sys=1
+vsocklib_x64.dll=1
+
+vsocklib_x86.dll=1
+
+
+;;
+;; Destinations
+;; ============
+[DestinationDirs]
+VSock.DriverFiles.x64    = 12
+VSock.DllFiles.x64       = 11
+VSock.DllFiles_WOW64.x64 = 16425
+
+;;
+;; CopyFiles directives
+;; ====================
+[VSock.DriverFiles.x64]
+vsock.sys,,,2	; COPYFLG_NOSKIP
+
+[VSock.DllFiles.x64]
+vsocklib.dll,vsocklib_x64.dll,,0x00004000   ;  COPYFLG_IN_USE_TRY_RENAME
+
+[VSock.DllFiles_WOW64.x86]
+
+[VSock.DllFiles_WOW64.x64]
+vsocklib.dll,vsocklib_x86.dll,,0x00004000   ;  COPYFLG_IN_USE_TRY_RENAME
+
+[VSock.DllFiles_WOW64.arm64]
+
+
+
+;;
+;; Let installers find the original INF path if needed
+;; ===================================================
+[VMwarePathInfo]
+OriginalInfSourcePath = %1%
+
+;;
+;; Strings (localizable and not localizable)
+;; =========================================
+[Strings]
+loc.VSockServiceDesc           = "vSockets Driver"
+loc.VSockServiceDisplayName    = "vSockets Virtual Machine Communication Interface Sockets driver"
+loc.Disk1                      = "vSockets Driver Source Media"
+CompanyProvider                = "Broadcom Inc."
+VSockServiceName               = "vsock"

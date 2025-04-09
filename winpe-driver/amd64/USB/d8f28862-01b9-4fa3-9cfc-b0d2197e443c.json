@@ -1,0 +1,32 @@
+{
+  "Title": "Realtek - Net - 1153.7.20.520",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "Realtek Net  driver update released in  May 2022",
+  "LastModified": "2022-05-20",
+  "Size": "327 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows - Client",
+    "version 21H2 and later",
+    "Servicing Drivers",
+    "Windows - Client",
+    "version 21H2 and later",
+    "Upgrade & Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": false,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "d8f28862-01b9-4fa3-9cfc-b0d2197e443c",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2023/02/re_lan_wt6_01_1153.7.20.520(8153b)_88e0cf00f0bee89922348d0c5dd58fb084cc72fb.cab",
+  "InputObject": "d8f28862-01b9-4fa3-9cfc-b0d2197e443c"
+}

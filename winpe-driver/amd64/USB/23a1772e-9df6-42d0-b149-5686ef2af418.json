@@ -1,0 +1,32 @@
+{
+  "Title": "ASIX - Net - 3.22.2.0",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "ASIX Net  driver update released in  June 2024",
+  "LastModified": "2024-06-07",
+  "Size": "92 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Servicing Drivers",
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Upgrade & Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": false,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "23a1772e-9df6-42d0-b149-5686ef2af418",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2024/07/8175460c-6810-496d-be0b-3bc256c46e3e_97116c091f7e16b4e9aeca14e7e397a088cd4ca8.cab",
+  "InputObject": "23a1772e-9df6-42d0-b149-5686ef2af418"
+}

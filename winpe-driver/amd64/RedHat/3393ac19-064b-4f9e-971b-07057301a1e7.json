@@ -1,0 +1,32 @@
+{
+  "Title": "Red Hat, Inc. - System - 100.93.104.23900",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "Red Hat, Inc. System  driver update released in  July 2023",
+  "LastModified": "2023-07-04",
+  "Size": "132 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Servicing Drivers",
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Upgrade & Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": false,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "3393ac19-064b-4f9e-971b-07057301a1e7",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2023/10/55797f51-9616-40df-b68e-3c4fd247f6ea_f0b87347b8c2d9075d10805f277ec0b92a4c86e5.cab",
+  "InputObject": "3393ac19-064b-4f9e-971b-07057301a1e7"
+}

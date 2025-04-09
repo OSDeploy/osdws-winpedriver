@@ -1,0 +1,32 @@
+{
+  "Title": "Red Hat, Inc. - SCSIAdapter - 100.94.104.24700",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "Red Hat, Inc. SCSIAdapter  driver update released in  January 2024",
+  "LastModified": "2024-01-22",
+  "Size": "51 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Servicing Drivers",
+    "Windows 11 Client",
+    "version 22H2 and later",
+    "Upgrade & Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": false,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "ea01c42b-6788-44c2-8712-aa3c94a3cf9d",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2024/04/6b5b8f1a-ed8d-4abd-a20f-059fd7e4a0a4_44d233ce4fa499661373912cfd14886caf9a6e4f.cab",
+  "InputObject": "ea01c42b-6788-44c2-8712-aa3c94a3cf9d"
+}

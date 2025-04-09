@@ -1,0 +1,128 @@
+
+;-------------------------------------------------------------------------
+; vmrawdsk.inf
+;
+; Copyright (c) 1993-1999, Microsoft Corporation
+; Copyright (c) 1999-2024 Broadcom. All Rights Reserved.
+; The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+;-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Version]
+Signature   ="$WINDOWS NT$"
+Class       = System
+ClassGUID   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %CompanyProvider%
+DriverVer   = 06/13/2024, 1.1.8.0
+CatalogFile = vmrawdsk.cat
+DriverPackageDisplayName = %loc.VMRawDskServiceDisplayName%
+DriverPackageType = KernelService
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+
+[SourceDisksNames]
+1 = %loc.Disk1%,,,""
+
+[SourceDisksFiles]
+vmrawdsk.sys=1
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %loc.VMRawDskServiceDesc%
+CopyFiles           = VMRawDsk.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %VMRawDskServiceName%,0x800,VMRawDsk.Service    ; SPSVCINST_STARTSERVICE
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = VMRawDsk.DriverFiles
+DelReg     = VMRawDsk.DelRegistry
+
+
+[DefaultUninstall.Services]
+DelService = %VMRawDskServiceName%,0x204           ; stop the service, delete event log entries
+
+;
+; Services Section
+;
+
+[VMRawDsk.Service]
+DisplayName      = %loc.VMRawDskServiceDisplayName%
+Description      = %loc.VMRawDskServiceDesc%
+ServiceBinary    = %12%\vmrawdsk.sys            ;%windir%\system32\drivers\vmrawdsk.sys
+ServiceType      = 1                            ;SERVICE_KERNEL_DRIVER
+StartType        = 1                            ;SERVICE_SYSTEM_START
+ErrorControl     = 0                            ;SERVICE_ERROR_IGNORE
+LoadOrderGroup   = Base
+AddReg           = VMRawDsk.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[VMRawDsk.AddRegistry]
+HKR,%RegParametersSubkeyName%,%RegCacheDirValueName%,0x00000000,%16419%%RegCacheDirValue%
+HKR,%RegParametersSubkeyName%,%RegCommonAppDataValueName%,0x00000000,%16419%
+HKR,%RegParametersSubkeyName%,%RegPrevBootModeValueName%,0x00000002,%RegPrevBootModeValue%
+HKR,%RegParametersSubkeyName%,%RegWinDirValueName%,0x00000000,%10%
+
+[VMRawDsk.DelRegistry]
+
+;
+; Copy Files
+;
+
+[VMRawDsk.DriverFiles]
+vmrawdsk.sys
+
+;;
+[Strings]
+loc.VMRawDskServiceDesc        = "VMware Physical Disk Helper"
+loc.VMRawDskServiceDisplayName = "VMware Physical Disk Helper"
+loc.Disk1                      = "VMRawDsk Source Media"
+CompanyProvider                = "Broadcom Inc."
+VMRawDskServiceName            = "VMRawDsk"
+RegParametersSubkeyName        = "Parameters"
+RegCacheDirValueName           = "CacheDir"
+RegCacheDirValue               = "\VMware\RawdskCompatibility\"
+RegCommonAppDataValueName      = "CommonAppData"
+RegPrevBootModeValueName       = "PrevBootMode"
+RegPrevBootModeValue           = "native"
+RegWinDirValueName             = "Windir"
+

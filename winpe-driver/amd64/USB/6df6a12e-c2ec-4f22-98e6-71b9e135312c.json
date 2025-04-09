@@ -1,0 +1,32 @@
+{
+  "Title": "ASIX - Net - 10-26-2018 12-00-00 AM - 3.20.1.0",
+  "Id": "",
+  "Architecture": "x64",
+  "Language": "",
+  "Hotfix": null,
+  "Description": "ASIX Net  driver update released in  October 2018",
+  "LastModified": "2018-10-26",
+  "Size": "70 KB",
+  "Classification": "Drivers",
+  "SupportedProducts": [
+    "Windows 10 S",
+    "version 1809 and later",
+    "Servicing Drivers",
+    "Windows 10",
+    "version 1809 and later",
+    "Servicing Drivers"
+  ],
+  "MSRCNumber": "",
+  "MSRCSeverity": "",
+  "RebootBehavior": "Can request restart",
+  "RequestsUserInput": true,
+  "ExclusiveInstall": "",
+  "NetworkRequired": false,
+  "UninstallNotes": null,
+  "UninstallSteps": null,
+  "UpdateId": "6df6a12e-c2ec-4f22-98e6-71b9e135312c",
+  "Supersedes": null,
+  "SupersededBy": null,
+  "Link": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/driver/drvs/2018/11/02a2ae13-0612-4628-af49-bd88fe55fce7_77504fecf204006ea3e82d6571c40785886ca680.cab",
+  "InputObject": "6df6a12e-c2ec-4f22-98e6-71b9e135312c"
+}

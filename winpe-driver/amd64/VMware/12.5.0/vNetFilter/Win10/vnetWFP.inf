@@ -1,0 +1,77 @@
+;;;
+;;; vnetWFP
+;;;
+;;;
+;;; Copyright (c) 2010-2024 Broadcom. All Rights Reserved.
+;;; The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+;;;
+
+[Version]
+Signature         = "$Windows NT$"
+Provider          = %BRCM%
+DriverVer         = 06/24/2024,12.5.0.0
+CatalogFile       = vnetWFP.cat
+Class             = WFPCALLOUTS
+ClassGUID         = {57465043-616C-6C6F-7574-5F636C617373}
+DriverPackageType = KernelService
+PnpLockDown       = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+DriverFiles    = 12  ; %windir%\system32\drivers
+
+;; Exclude drivers from "Add New Hardware" list.
+[ControlFlags]
+ExcludeFromSelect = *
+
+;;
+;; Install sections
+;;
+[DefaultInstall]
+CopyFiles  = DriverFiles
+
+[DefaultInstall.Services]
+AddService = %ServiceName%,,Service
+
+;;
+;; Uninstall sections
+;;
+[DefaultUninstall]
+DelFiles   = DriverFiles
+
+[DefaultUninstall.Services]
+DelService = %ServiceName%,0x200  ; Ensure service is stopped before deleting
+
+;;
+;; Services Section
+;;
+[Service]
+DisplayName    = %ServiceName%
+Description    = %ServiceDescription%
+ServiceBinary  = %12%\vnetWFP.sys
+Dependencies   = "tcpip"
+ServiceType    = 1      ; SERVICE_KERNEL_DRIVER
+StartType      = 1      ; SERVICE_SYSTEM_START
+ErrorControl   = 1      ; SERVICE_ERROR_NORMAL
+LoadOrderGroup = PNP_TDI
+
+;;
+;; Copy Files
+;;
+[DriverFiles]
+vnetWFP.sys
+
+[SourceDisksNames]
+1 = %DiskId%
+
+[SourceDisksFiles]
+vnetWFP.sys = 1
+
+;;
+;; String Section
+;;
+[Strings]
+BRCM               = "Broadcom Inc."
+ServiceDescription = "Guest Introspection Network Filter Driver"
+ServiceName        = "vnetWFP"
+DiskId             = "Guest Introspection Installation Disk"

@@ -1,0 +1,55 @@
+; efifw.inf
+;
+; This file contains the information required to load the driver for the VMware EFI firmware
+;
+; Copyright (c) 2017-2024 Broadcom. All Rights Reserved.
+; The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+[Version]
+Signature="$Windows NT$"
+Provider=%Provider%
+Class=Firmware
+ClassGuid={f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer=06/27/2024,1.0.0.1
+CatalogFile=efifw.cat
+PnpLockdown=1
+
+[Manufacturer]
+%MfgName%=Firmware,NTx86,NTamd64
+
+[Firmware.NTx86]
+%FirmwareDesc%=Firmware_Install,UEFI\RES_{C9CF6ED5-7195-4824-B60B-7ACDC14B6C82}
+
+[Firmware.NTamd64]
+%FirmwareDesc%=Firmware_Install,UEFI\RES_{C9CF6ED5-7195-4824-B60B-7ACDC14B6C82}
+
+[Firmware_Install.NT]
+CopyFiles=Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+efifwfromhost.bin
+
+[Firmware_Install.NT.Hw]
+AddReg=Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{C9CF6ED5-7195-4824-B60B-7ACDC14B6C82}
+HKR,,FirmwareVersion,%REG_DWORD%,0x3FFFFFFF
+HKR,,FirmwareFilename,,{C9CF6ED5-7195-4824-B60B-7ACDC14B6C82}\efifwfromhost.bin
+
+[SourceDisksNames]
+1=%DiskName%
+
+[SourceDisksFiles]
+efifwfromhost.bin=1
+
+[DestinationDirs]
+DefaultDestDir=%DIRID_WINDOWS%,Firmware\{C9CF6ED5-7195-4824-B60B-7ACDC14B6C82}
+
+[Strings]
+Provider = "Broadcom Inc."
+MfgName  = "Broadcom Inc."
+FirmwareDesc = "EFI Firmware From Host"
+DiskName = "Firmware Update"
+
+DIRID_WINDOWS = 10
+REG_DWORD = 0x00010001
