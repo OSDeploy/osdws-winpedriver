@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" description="Windows WiFi Client Realtek Rtl819xp Networking Driver" displayName="Realtek Rtl819xp WiFi Networking Driver" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved" supportInformation="http://support.microsoft.com/?kbid=777777">
+  <assemblyIdentity name="Microsoft-Windows-Wifi-Client-Realtek-Rtl819xp-FOD-Package" version="10.0.26100.1" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="KB777778" releaseType="OnDemand Pack">
+    <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+      <mum2:FodInformation Id="526" />
+      <mum2:OptionalFeatures SchemaVersion="1.0">
+        <mum2:SettingsPageOptions Visibility="hidden" FeatureType="default" />
+      </mum2:OptionalFeatures>
+    </mum2:customInformation>
+    <parent buildCompare="GE" revisionCompare="GE">
+      <assemblyIdentity name="Microsoft-Windows-Client-Features-Package" version="10.0.26100.1" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <localizedStrings>
+      <string language="en-US" displayName="Realtek Rtl819xp WiFi Networking Driver" description="Windows WiFi Client Realtek Rtl819xp Networking Driver" />
+    </localizedStrings>
+    <declareCapability>
+      <capability>
+        <capabilityIdentity name="Microsoft.Windows.Wifi.Client.Realtek.Rtl819xp" version="1.0" />
+      </capability>
+    </declareCapability>
+    <update name="bd5c70cf65a73eb7d790cf5017957713" restart="required">
+      <driver inf="net819xp.inf" ranking="normal">
+        <assemblyIdentity name="dual_net819xp.inf" version="10.0.26100.1" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" type="dualModeDriver" />
+      </driver>
+    </update>
+    <packageExtended packageSize="665466" />
+  </package>
+</assembly>
